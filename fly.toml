@@ -6,7 +6,7 @@ kill_timeout = 5
 processes = []
 
 [build]
-#  image = "ghcr.io/tyrauber/fly-baremaps:main"
+  image = "ghcr.io/tyrauber/fly-baremaps:main"
 
 [mounts]
   source="data"
