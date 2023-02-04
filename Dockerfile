@@ -1,5 +1,5 @@
 FROM node:lts-alpine as base
-RUN apk --update add git curl nano openjdk17-jre protobuf protoc maven gcompat libstdc++
+RUN apk --update add git curl nano openjdk17-jre protobuf-dev maven gcompat
 
 FROM base AS build
 
