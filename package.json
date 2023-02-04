@@ -1,0 +1,16 @@
+{
+  "name": "fly-baremaps",
+  "version": "0.0.2",
+  "main": "bin/index.js",
+  "scripts": {
+    "image:build": "docker buildx build . -t tyrauber/fly-baremaps",
+    "image:start": "docker run -d --name baremaps -p 8080:8080 tyrauber/fly-baremaps",
+    "image:ssh": "docker exec --interactive --tty baremaps /bin/sh"
+  },
+  "author": "Ty Rauber <tyrauber@mac.com>",
+  "license": "Apache",
+  "private": true,
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
