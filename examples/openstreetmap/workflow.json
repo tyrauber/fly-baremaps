@@ -1,0 +1,42 @@
+{
+  "steps": [
+    {
+      "id": "download",
+      "needs": [],
+      "tasks": [
+        {
+          "type": "DownloadUrl",
+          "url": "https://download.geofabrik.de/europe/liechtenstein-latest.osm.pbf",
+          "path": "liechtenstein-latest.osm.pbf"
+        }
+      ]
+    },
+    {
+      "id": "import",
+      "needs": [
+        "download"
+      ],
+      "tasks": [
+        {
+          "type": "ImportOpenStreetMap",
+          "file": "liechtenstein-latest.osm.pbf",
+          "database": "jdbc:$DATABASE_URL",
+          "databaseSrid": 3857
+        }
+      ]
+    },
+    {
+      "id": "index",
+      "needs": [
+        "import"
+      ],
+      "tasks": [
+        {
+          "type": "ExecuteSql",
+          "file": "indexes.sql",
+          "database": "jdbc:$DATABASE_URL"
+        }
+      ]
+    }
+  ]
+}

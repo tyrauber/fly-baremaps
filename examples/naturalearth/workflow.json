@@ -1,0 +1,16 @@
+{
+  "steps": [
+    {
+      "id": "natural_earth_vector",
+      "needs": [],
+      "tasks": [
+
+        {
+          "type": "ExecuteSql",
+          "file": "indexes.sql",
+          "database": "jdbc:$DATABASE_URL"
+        }
+      ]
+    }
+  ]
+}
