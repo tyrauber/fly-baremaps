@@ -1,5 +1,5 @@
-FROM node:lts-alpine as base
-RUN apk --update add git curl nano openjdk17-jre maven gcompat
+FROM arm64v8/alpine as base
+RUN apk --update add git curl nano openjdk17-jre maven gcompat npm
 
 FROM base AS build
 

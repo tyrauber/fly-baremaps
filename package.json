@@ -1,6 +1,6 @@
 {
   "name": "fly-baremaps",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "bin/index.js",
   "scripts": {
     "image:build": "docker buildx build . -t tyrauber/fly-baremaps",
