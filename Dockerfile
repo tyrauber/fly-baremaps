@@ -1,5 +1,5 @@
 FROM arm64v8/alpine as base
-RUN apk --update add git curl nano openjdk19-jdk maven gcompat npm
+RUN apk --update add git curl nano openjdk17-jdk maven gcompat npm
 
 FROM base AS build
 
